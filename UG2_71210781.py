@@ -1,7 +1,14 @@
+import time
 def deret_ajaib(n):
-    data = [1,2,3,4,5]
-    for i in range(1, n+1):
-        if i > len(data)+1:
-            data.append((i-2)+(i//2))
-    return data
-print(deret_ajaib(10))
+    if n <= 5:
+        return n
+    else:
+        return deret_ajaib(n-2) + deret_ajaib(n//2)
+
+n = 7
+start = time.time()
+hasil = deret_ajaib(n)
+end = time.time()
+
+print("Hasil :",hasil)
+print("Duration :",end-start)
